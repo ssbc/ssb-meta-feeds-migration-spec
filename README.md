@@ -1,10 +1,10 @@
 # SSB metafeed migration path
 
 In this document we will describe how to migrate classic SSB, with one
-feed per device, to a a world with multiple feeds using metafeeds. We
+feed per device, to a world with multiple feeds using metafeeds. We
 will also define what that means in terms of ID. Note, this document
-does not define how applications that does not have to interact with
-classic SSB should behave.
+does not define behavior for applications that do not have to interact with
+classic SSB.
 
 ## Classic SSB
 
@@ -12,7 +12,7 @@ Classic SSB refers to feeds as defined in the [protocol guide], and
 the key used to sign these feeds. In most cases people only have one
 feed per device, so let us assume that model in this document. The key
 used to sign messages on a feed is the identity of the device, the id
-when connecting to other peers using muxrpc. Finally is also used for
+when connecting to other peers using muxrpc. Finally it is also used for
 mentions and contacts messages to define the friend relationship.
 
 ## Metafeeds
@@ -24,11 +24,11 @@ feeds as defined in the [metafeeds spec].
 
 In order to signal that someone has started using metafeeds, a classic
 SSB feed is linked to a metafeed as described in the [existing SSB
-identity part of the metafeeds spec]. After this, the identity of the
+identity part of the metafeeds spec]. After migrating, the identity of the
 device ought to be the feed id of the root metafeed, but in order to
 ease the transition, the classic ID is used until such a time as the
-main feed is no longer the classic feed. The identity section further
-refines the ID concept into multiple areas.
+main feed is no longer the classic feed. The identity section in this
+specification further refines the ID concept into multiple areas.
 
 ### Identity
 
@@ -42,7 +42,7 @@ As described earlier the ID of a device can now be seen as:
 - The *network identity* will for now be the classic ID. When the
   [network identity spec] is implemented there can be multiple
   identities all tying back to the same metafeed. Note that this might
-  cause connection problems with older clients, so shoule only be
+  cause connection problems with older clients, so should only be
   implemented at such a time when a majority of the network supports
   metafeeds.
 - Mentions should for now also still use the classic ID.
@@ -50,7 +50,7 @@ As described earlier the ID of a device can now be seen as:
   similar to mentions use the classic SSB id for now. What happens
   after the main feed is changed has not yet been defined.
 
-For muliple devices to act as a single identity the [fusion identity
+For multiple devices to act as a single identity the [fusion identity
 spec] should be used. This spec defines a new fusion identity that can
 be used for: private messages, external identity, mentions and friend
 relationship.
@@ -91,7 +91,7 @@ as not replicating private group feeds you are not a part of, or it
 could be only replicating the index feed and common private groups for
 feeds outside of your hops range. Clients are expected to replicate as
 much of the tree that they can within their hops range to increase the
-likelyhood that content will be available when replicating with peers.
+likelihood that content will be available when replicating with peers.
 
 Lets consider the scenarios:
 
