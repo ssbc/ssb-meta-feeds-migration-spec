@@ -60,6 +60,17 @@ relationship.
 The tree should be structured as defined in the [v1 part] of the
 metafeeds spec.
 
+```mermaid
+graph TB;
+  root --> v1
+  v1 --> 8 & a & c & 3
+  8 --> GA(group: aalborg)
+  a --> G(group invitations)
+  a --> I(index feed about)
+  c --> M(main feed)
+  3 --> GB(group: batts)
+```
+
 FIXME: Consider moving the whole v1 over here from the metafeeds
 spec. And use a better example with index feeds, the main feed and
 groups.
