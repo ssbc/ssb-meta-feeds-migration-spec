@@ -3,8 +3,8 @@
 In this document we will describe how to migrate classic SSB, with one
 feed per device, to a world with multiple feeds using metafeeds. We
 will also define what that means in terms of ID. Note, this document
-does not define behavior for applications that do not have to interact with
-classic SSB.
+does not define behavior for applications that do not have to interact
+with classic SSB.
 
 ## Classic SSB
 
@@ -12,8 +12,8 @@ Classic SSB refers to feeds as defined in the [protocol guide], and
 the key used to sign these feeds. In most cases people only have one
 feed per device, so let us assume that model in this document. The key
 used to sign messages on a feed is the identity of the device, the id
-when connecting to other peers using muxrpc. Finally it is also used for
-mentions and contacts messages to define the friend relationship.
+when connecting to other peers using muxrpc. Finally it is also used
+for mentions and contacts messages to define the friend relationship.
 
 ## Metafeeds
 
@@ -24,11 +24,11 @@ feeds as defined in the [metafeeds spec].
 
 In order to signal that someone has started using metafeeds, a classic
 SSB feed is linked to a metafeed as described in the [existing SSB
-identity part of the metafeeds spec]. After migrating, the identity of the
-device ought to be the feed id of the root metafeed, but in order to
-ease the transition, the classic ID is used until such a time as the
-main feed is no longer the classic feed. The identity section in this
-specification further refines the ID concept into multiple areas.
+identity part of the metafeeds spec]. After migrating, the identity of
+the device ought to be the feed id of the root metafeed, but in order
+to ease the transition, the classic ID is used until such a time as
+the main feed is no longer the classic feed. The identity section in
+this specification further refines the ID concept into multiple areas.
 
 ### Identity
 
