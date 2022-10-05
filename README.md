@@ -58,8 +58,7 @@ relationship.
 ### Tree structure v1
 
 The tree should be structured as defined in the [v1 part] of the
-metafeeds spec. Furthermore it should use the [group spec] for how to
-structure the feeds used for private groups.
+metafeeds spec.
 
 FIXME: Consider moving the whole v1 over here from the metafeeds
 spec. And use a better example with index feeds, the main feed and
@@ -81,6 +80,12 @@ should be used to define its position in the tree. See v1 section
 above.
 
 FIXME: example of such a message
+
+### Private groups
+
+For private groups the group invite feed should always to be included
+in the tree as defined in the [group spec]. The tree also includes
+individual group feeds for each group the device is a member of.
 
 ### Network replication
 
