@@ -133,6 +133,12 @@ Lets consider the scenarios:
    'metafeed/announce' message and from there we can replicate the
    metafeeds tree and the about index feed.
 
+When replicating index feeds using EBT it is important to make sure
+that you don't get duplicate messages in your database, this is
+similar to adding messages out-of-order (ooo). This can either be done
+by checking the local database before inserting the indexed message or
+by keeping track of what messages you already have on the main feed.
+
 [protocol guide]: https://ssbc.github.io/scuttlebutt-protocol-guide/#feeds
 [metafeeds spec]: https://github.com/ssbc/ssb-meta-feeds-spec
 [existing SSB identity part of the metafeeds spec]: https://github.com/ssbc/ssb-meta-feeds-spec/#existing-ssb-identity
