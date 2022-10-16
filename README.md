@@ -137,7 +137,10 @@ When replicating index feeds using EBT it is important to make sure
 that you don't get duplicate messages in your database, this is
 similar to adding messages out-of-order (ooo). This can either be done
 by checking the local database before inserting the indexed message or
-by keeping track of what messages you already have on the main feed.
+by keeping track of what messages you already have on the main
+feed. Similarly if you start replicating a feed in full that you
+previously only partially replicated, you also need to be careful not
+to end up with duplicates.
 
 [protocol guide]: https://ssbc.github.io/scuttlebutt-protocol-guide/#feeds
 [metafeeds spec]: https://github.com/ssbc/ssb-meta-feeds-spec
