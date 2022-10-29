@@ -58,7 +58,7 @@ relationship.
 ### Tree structure v1
 
 The tree should be structured as defined in the [v1 part] of the
-metafeeds spec.
+metafeeds spec. Like this example:
 
 ```mermaid
 graph TB;
@@ -70,10 +70,6 @@ graph TB;
   c --> M(main feed)
   3 --> GB(group: batts)
 ```
-
-FIXME: Consider moving the whole v1 over here from the metafeeds
-spec. And use a better example with index feeds, the main feed and
-groups.
 
 ### Main feed
 
