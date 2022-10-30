@@ -74,19 +74,49 @@ graph TB;
 ### Main feed
 
 There should only be 1 (non-tombstoned) main feed in the tree and it
-should use the name 'main feed' to define its position in the
-tree. See v1 section above.
+should use the purpose 'main' to define its position in the tree. See
+v1 section above.
 
-FIXME: example of such a message
+Example of adding an existing feed:
+
+```
+{
+  "type" => "metafeed/add/existing",
+  "feedpurpose" => "main",
+  "subfeed" => (BFE-encoded feed ID for the 'main' feed),
+  "metafeed" => (BFE-encoded Bendy Butt feed ID for the shard metafeed),
+  "tangles" => {
+    "metafeed" => {
+      "root" => null,
+      "previous" => null
+    }
+  },
+}
+```
 
 ### Indexes
 
 Applications should define one v1 [index feed], an index of their
-classic SSB main feeds about messages. The name 'index feed about'
+classic SSB main feeds about messages. The purpose 'index feed about'
 should be used to define its position in the tree. See v1 section
 above.
 
-FIXME: example of such a message
+Example of adding a new index feed:
+
+```
+{
+  "type" => "metafeed/add/derived",
+  "feedpurpose" => "index feed about",
+  "subfeed" => (BFE-encoded feed ID for the 'about' feed),
+  "metafeed" => (BFE-encoded Bendy Butt feed ID for the shard metafeed),
+  "tangles" => {
+    "metafeed" => {
+      "root" => null,
+      "previous" => null
+    }
+  },
+}
+```
 
 ### Private groups
 
